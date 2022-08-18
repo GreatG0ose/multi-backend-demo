@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "model/person.proto";
+
+option java_package = "com.demo.api.service";
+option go_package = "go-backend/api/service";
+
+service HelloService {
+  rpc Greet(model.Person) returns (GreetResponse);
+}
+
+message GreetResponse {
+  string response = 1;
+}
