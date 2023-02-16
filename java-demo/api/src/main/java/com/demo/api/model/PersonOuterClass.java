@@ -71,57 +71,6 @@ public final class PersonOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Person(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firstName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.demo.api.model.PersonOuterClass.internal_static_model_Person_descriptor;
@@ -136,7 +85,8 @@ public final class PersonOuterClass {
     }
 
     public static final int FIRST_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object firstName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object firstName_ = "";
     /**
      * <code>string first_name = 1;</code>
      * @return The firstName.
@@ -174,7 +124,8 @@ public final class PersonOuterClass {
     }
 
     public static final int LAST_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object lastName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object lastName_ = "";
     /**
      * <code>string last_name = 2;</code>
      * @return The lastName.
@@ -231,7 +182,7 @@ public final class PersonOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -246,7 +197,7 @@ public final class PersonOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -265,7 +216,7 @@ public final class PersonOuterClass {
           .equals(other.getFirstName())) return false;
       if (!getLastName()
           .equals(other.getLastName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -280,7 +231,7 @@ public final class PersonOuterClass {
       hash = (53 * hash) + getFirstName().hashCode();
       hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getLastName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,26 +348,20 @@ public final class PersonOuterClass {
 
       // Construct using com.demo.api.model.PersonOuterClass.Person.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         firstName_ = "";
-
         lastName_ = "";
-
         return this;
       }
 
@@ -443,10 +388,19 @@ public final class PersonOuterClass {
       @java.lang.Override
       public com.demo.api.model.PersonOuterClass.Person buildPartial() {
         com.demo.api.model.PersonOuterClass.Person result = new com.demo.api.model.PersonOuterClass.Person(this);
-        result.firstName_ = firstName_;
-        result.lastName_ = lastName_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.demo.api.model.PersonOuterClass.Person result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.firstName_ = firstName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastName_ = lastName_;
+        }
       }
 
       @java.lang.Override
@@ -495,13 +449,15 @@ public final class PersonOuterClass {
         if (other == com.demo.api.model.PersonOuterClass.Person.getDefaultInstance()) return this;
         if (!other.getFirstName().isEmpty()) {
           firstName_ = other.firstName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getLastName().isEmpty()) {
           lastName_ = other.lastName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -516,19 +472,43 @@ public final class PersonOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.demo.api.model.PersonOuterClass.Person parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                firstName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                lastName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.demo.api.model.PersonOuterClass.Person) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object firstName_ = "";
       /**
@@ -571,11 +551,9 @@ public final class PersonOuterClass {
        */
       public Builder setFirstName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         firstName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,8 +562,8 @@ public final class PersonOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstName() {
-        
         firstName_ = getDefaultInstance().getFirstName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -596,12 +574,10 @@ public final class PersonOuterClass {
        */
       public Builder setFirstNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         firstName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -647,11 +623,9 @@ public final class PersonOuterClass {
        */
       public Builder setLastName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         lastName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -660,8 +634,8 @@ public final class PersonOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastName() {
-        
         lastName_ = getDefaultInstance().getLastName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -672,12 +646,10 @@ public final class PersonOuterClass {
        */
       public Builder setLastNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         lastName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -714,7 +686,18 @@ public final class PersonOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Person(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

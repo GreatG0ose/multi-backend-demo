@@ -1,3 +1,6 @@
 .idea
 **/*.iml
 java-demo/**/target/
+php-backend/vendor
+php-backend/rr
+php-backend/composer.lock

@@ -15,7 +15,7 @@ public final class Hello {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface GreetResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:GreetResponse)
+      // @@protoc_insertion_point(interface_extends:service.GreetResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -31,11 +31,11 @@ public final class Hello {
         getResponseBytes();
   }
   /**
-   * Protobuf type {@code GreetResponse}
+   * Protobuf type {@code service.GreetResponse}
    */
   public static final class GreetResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GreetResponse)
+      // @@protoc_insertion_point(message_implements:service.GreetResponse)
       GreetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GreetResponse.newBuilder() to construct.
@@ -58,66 +58,22 @@ public final class Hello {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GreetResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              response_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.demo.api.service.Hello.internal_static_GreetResponse_descriptor;
+      return com.demo.api.service.Hello.internal_static_service_GreetResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.demo.api.service.Hello.internal_static_GreetResponse_fieldAccessorTable
+      return com.demo.api.service.Hello.internal_static_service_GreetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.demo.api.service.Hello.GreetResponse.class, com.demo.api.service.Hello.GreetResponse.Builder.class);
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object response_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object response_ = "";
     /**
      * <code>string response = 1;</code>
      * @return The response.
@@ -171,7 +127,7 @@ public final class Hello {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(response_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, response_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -183,7 +139,7 @@ public final class Hello {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(response_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, response_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -200,7 +156,7 @@ public final class Hello {
 
       if (!getResponse()
           .equals(other.getResponse())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -213,7 +169,7 @@ public final class Hello {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -309,52 +265,47 @@ public final class Hello {
       return builder;
     }
     /**
-     * Protobuf type {@code GreetResponse}
+     * Protobuf type {@code service.GreetResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:GreetResponse)
+        // @@protoc_insertion_point(builder_implements:service.GreetResponse)
         com.demo.api.service.Hello.GreetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.demo.api.service.Hello.internal_static_GreetResponse_descriptor;
+        return com.demo.api.service.Hello.internal_static_service_GreetResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.demo.api.service.Hello.internal_static_GreetResponse_fieldAccessorTable
+        return com.demo.api.service.Hello.internal_static_service_GreetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.demo.api.service.Hello.GreetResponse.class, com.demo.api.service.Hello.GreetResponse.Builder.class);
       }
 
       // Construct using com.demo.api.service.Hello.GreetResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         response_ = "";
-
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.demo.api.service.Hello.internal_static_GreetResponse_descriptor;
+        return com.demo.api.service.Hello.internal_static_service_GreetResponse_descriptor;
       }
 
       @java.lang.Override
@@ -374,9 +325,16 @@ public final class Hello {
       @java.lang.Override
       public com.demo.api.service.Hello.GreetResponse buildPartial() {
         com.demo.api.service.Hello.GreetResponse result = new com.demo.api.service.Hello.GreetResponse(this);
-        result.response_ = response_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.demo.api.service.Hello.GreetResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.response_ = response_;
+        }
       }
 
       @java.lang.Override
@@ -425,9 +383,10 @@ public final class Hello {
         if (other == com.demo.api.service.Hello.GreetResponse.getDefaultInstance()) return this;
         if (!other.getResponse().isEmpty()) {
           response_ = other.response_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -442,19 +401,38 @@ public final class Hello {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.demo.api.service.Hello.GreetResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                response_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.demo.api.service.Hello.GreetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object response_ = "";
       /**
@@ -497,11 +475,9 @@ public final class Hello {
        */
       public Builder setResponse(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         response_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -510,8 +486,8 @@ public final class Hello {
        * @return This builder for chaining.
        */
       public Builder clearResponse() {
-        
         response_ = getDefaultInstance().getResponse();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -522,12 +498,10 @@ public final class Hello {
        */
       public Builder setResponseBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         response_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,10 +518,10 @@ public final class Hello {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:GreetResponse)
+      // @@protoc_insertion_point(builder_scope:service.GreetResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:GreetResponse)
+    // @@protoc_insertion_point(class_scope:service.GreetResponse)
     private static final com.demo.api.service.Hello.GreetResponse DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.demo.api.service.Hello.GreetResponse();
@@ -564,7 +538,18 @@ public final class Hello {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GreetResponse(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -585,10 +570,10 @@ public final class Hello {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GreetResponse_descriptor;
+    internal_static_service_GreetResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GreetResponse_fieldAccessorTable;
+      internal_static_service_GreetResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -598,22 +583,23 @@ public final class Hello {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023service/hello.proto\032\022model/person.prot" +
-      "o\"!\n\rGreetResponse\022\020\n\010response\030\001 \001(\t26\n\014" +
-      "HelloService\022&\n\005Greet\022\r.model.Person\032\016.G" +
-      "reetResponseB.\n\024com.demo.api.serviceZ\026go" +
-      "-backend/api/serviceb\006proto3"
+      "\n\023service/hello.proto\022\007service\032\022model/pe" +
+      "rson.proto\"!\n\rGreetResponse\022\020\n\010response\030" +
+      "\001 \001(\t2>\n\014HelloService\022.\n\005Greet\022\r.model.P" +
+      "erson\032\026.service.GreetResponseB.\n\024com.dem" +
+      "o.api.serviceZ\026go-backend/api/serviceb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.demo.api.model.PersonOuterClass.getDescriptor(),
         });
-    internal_static_GreetResponse_descriptor =
+    internal_static_service_GreetResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_GreetResponse_fieldAccessorTable = new
+    internal_static_service_GreetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GreetResponse_descriptor,
+        internal_static_service_GreetResponse_descriptor,
         new java.lang.String[] { "Response", });
     com.demo.api.model.PersonOuterClass.getDescriptor();
   }

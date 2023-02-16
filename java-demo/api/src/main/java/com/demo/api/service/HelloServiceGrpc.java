@@ -12,7 +12,7 @@ public final class HelloServiceGrpc {
 
   private HelloServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "HelloService";
+  public static final String SERVICE_NAME = "service.HelloService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.demo.api.model.PersonOuterClass.Person,

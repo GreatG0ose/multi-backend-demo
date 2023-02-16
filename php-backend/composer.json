@@ -1,0 +1,23 @@
+{
+  "name": "app/example-grpc-server",
+  "description": "Example GRPC Server",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../.."
+    }
+  ],
+  "require": {
+    "spiral/roadrunner-grpc": "*",
+    "grpc/grpc": "^1.42",
+    "google/protobuf": "^3.21",
+    "spiral/roadrunner-cli": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

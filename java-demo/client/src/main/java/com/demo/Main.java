@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        var targets = List.of("localhost:8080", "localhost:8081");
+        var targets = List.of("127.0.0.1:9001");
 
         targets.forEach(target -> {
             var channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
